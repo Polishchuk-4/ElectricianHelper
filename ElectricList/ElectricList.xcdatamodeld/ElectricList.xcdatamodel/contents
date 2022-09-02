@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="points" inverseEntity="Room"/>
+        <relationship name="switcher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Switcher" inverseName="points" inverseEntity="Switcher"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Point" inverseName="room" inverseEntity="Point"/>
+    </entity>
+    <entity name="Switcher" representedClassName="Switcher" syncable="YES" codeGenerationType="class">
+        <attribute name="centrePoint" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="switcher" inverseEntity="Point"/>
+    </entity>
+    <elements>
+        <element name="Point" positionX="-157.8828125" positionY="50.26171875" width="128" height="103"/>
+        <element name="Room" positionX="-396.03515625" positionY="2.22265625" width="128" height="88"/>
+        <element name="Switcher" positionX="-396.5625" positionY="100.33203125" width="128" height="88"/>
+    </elements>
+</model>
